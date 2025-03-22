@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Clean circle background -->
+  <circle cx="64" cy="64" r="64" fill="#FF0000" />
+  
+  <!-- Simple HD symbol -->
+  <text x="28" y="84" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="white">HD</text>
+</svg>
