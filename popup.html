@@ -1,101 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YouTube Quality Setter</title>
+  <meta charset="utf-8">
+  <title>Resolution</title>
   <style>
-    body {
-      width: 250px;
-      padding: 15px;
-      font-family: Arial, sans-serif;
-      color: #333;
-    }
-    h2 {
-      margin-top: 0;
-      color: #ff0000;
-      font-size: 16px;
-    }
-    select {
-      width: 100%;
-      margin: 15px 0;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      background-color: #f9f9f9;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #ff0000;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.2s;
-    }
-    button:hover {
-      background-color: #cc0000;
-    }
-    .status {
-      margin-top: 15px;
-      text-align: center;
-      font-size: 13px;
-      height: 20px;
-      color: #4CAF50;
-    }
-    .current-page {
-      margin-top: 15px;
-      padding: 8px;
-      background-color: #f5f5f5;
-      border-radius: 4px;
-      font-size: 12px;
-    }
-    .info {
-      font-size: 12px;
-      color: #666;
-      margin-top: 15px;
-    }
+    body { font-family: sans-serif; margin: 10px; }
+    select { width: 100%; padding: 4px; }
   </style>
 </head>
 <body>
-  <h2>YouTube Quality Setter</h2>
-  
-  <div id="not-youtube" style="display: none;">
-    <p>Navigate to YouTube to use this extension.</p>
-  </div>
-  
-  <div id="youtube-controls">
-    <label for="quality">Set preferred video quality:</label>
-    <select id="quality">
-      <option value="auto">Auto</option>
-      <option value="2160p">2160p (4K)</option>
-      <option value="1440p">1440p (2K)</option>
-      <option value="1080p">1080p (Full HD)</option>
-      <option value="720p">720p (HD)</option>
-      <option value="480p">480p (SD)</option>
-      <option value="360p">360p</option>
-      <option value="240p">240p</option>
-      <option value="144p">144p</option>
-    </select>
-    
-    <button id="save">Apply Setting</button>
-    <div class="status" id="status"></div>
-    
-    <div id="on-video-page" class="current-page" style="display: none;">
-      Currently on a YouTube video page.<br>
-      Quality will be applied automatically.
-    </div>
-    
-    <div id="not-on-video" class="current-page" style="display: none;">
-      Not currently on a video page.<br>
-      Settings will apply to future videos.
-    </div>
-    
-    <div class="info">
-      Quality will be set automatically when videos start playing.
-    </div>
-  </div>
-  
+  <label for="res">Resolution:</label>
+  <select id="res">
+    <option value="tiny">144p</option>
+    <option value="small">240p</option>
+    <option value="medium">360p</option>
+    <option value="large">480p</option>
+    <option value="hd720">720p</option>
+    <option value="hd1080">1080p</option>
+    <option value="hd1440">1440p</option>
+    <option value="hd2160">2160p (4K)</option>
+  </select>
   <script src="popup.js"></script>
 </body>
 </html>
