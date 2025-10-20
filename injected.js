@@ -16,14 +16,33 @@ function applyQualityOnce(q) {
   }
 }
 
-window.addEventListener('yt-quality-apply', (e) => {
-  const quality = e.detail;
+function ensureQuality(quality, retries = 20, delay = 500) {
+  let count = 0;
+  const id = setInterval(() => {
+    count++;
+    if (applyQualityOnce(quality) || count >= retries) clearInterval(id);
+  }, delay);
+}
 
-  let attempts = 0;
-  const timer = setInterval(() => {
-    attempts++;
-    if (applyQualityOnce(quality) || attempts > 10) {
-      clearInterval(timer);
-    }
-  }, 500); // retry every 500ms up to ~5s
+// Called both on first load and after SPA navigations
+function runQualityEnforcer(quality) {
+  if (!quality) return;
+  ensureQuality(quality);
+}
+
+window.addEventListener('yt-quality-apply', (e) => {
+  runQualityEnforcer(e.detail);
+});
+
+// Detect navigation inside YouTube (SPA)
+window.addEventListener('yt-navigate-finish', () => {
+  const lastEvent = window._yt_last_quality_event;
+  if (lastEvent) {
+    setTimeout(() => runQualityEnforcer(lastEvent), 400);
+  }
+});
+
+// Remember last used quality
+window.addEventListener('yt-quality-apply', (e) => {
+  window._yt_last_quality_event = e.detail;
 });

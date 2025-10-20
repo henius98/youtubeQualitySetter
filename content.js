@@ -1,4 +1,3 @@
-// Inject into page context
 (function inject() {
   const s = document.createElement('script');
   s.src = chrome.runtime.getURL('injected.js');

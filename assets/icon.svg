@@ -1,7 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <!-- Clean circle background -->
-  <circle cx="8" cy="8" r="8" fill="#FF0000" />
-  
-  <!-- Simple HD symbol -->
-  <text x="4" y="11" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white">HD</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="YouTube Quality Setter icon">
+  <!-- background play-button shape (YouTube-like) -->
+  <rect x="64" y="160" width="896" height="704" rx="128" ry="128" fill="#FF0000"/>
+  <!-- play triangle -->
+  <polygon points="360,320 360,704 704,512" fill="#FFFFFF"/>
+  <!-- slider lines (quality controls) -->
+  <g transform="translate(0,0)">
+    <!-- top slider -->
+    <line x1="480" y1="300" x2="880" y2="300" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="640" cy="300" r="36" fill="#FFFFFF"/>
+    <!-- middle slider -->
+    <line x1="480" y1="512" x2="880" y2="512" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="540" cy="512" r="36" fill="#FFFFFF"/>
+    <!-- bottom slider -->
+    <line x1="480" y1="724" x2="880" y2="724" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="760" cy="724" r="36" fill="#FFFFFF"/>
+  </g>
 </svg>
